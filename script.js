@@ -6,15 +6,28 @@ let main = document.querySelector('.js_todo-app'),
 	form = modal.querySelector('.js_modal-form'),
 	todoTemplate = document.querySelector('.js_todo-template');
 
-function openModal(e) {
-	main.classList.add('hasOpenModal');
-	modal.classList.add('isOpen');
-}
-function closeModal(e, hasNewTodo) {
-	main.classList.remove('hasOpenModal');
-	main.removeAttribute('inert');
-	modal.classList.remove('isOpen');
-}
+	function openModal(e) {
+		main.classList.add('hasOpenModal');
+		main.setAttribute('inert', '');
+		modal.classList.add('isOpen');
+		modal.focus();
+	}
+	function closeModal(e, hasNewTodo) {
+		main.classList.remove('hasOpenModal');
+		main.removeAttribute('inert');
+		modal.classList.remove('isOpen');
+
+		if (hasNewTodo) {
+			setTimeout(function manageFocus() {
+				let newTodos = list.querySelectorAll('.todo'),
+					newTodo = newTodos[newTodos.length - 1].querySelector('input');
+
+				newTodo.focus();
+			}, 35);
+		} else {
+			newBtn.focus();
+		}
+	}
 
 newBtn.addEventListener('click', openModal);
 closeBtn.addEventListener('click', closeModal);
@@ -39,5 +52,10 @@ form.addEventListener('submit', function (e) {
 list.addEventListener('click', function (e) {
 	if (e.target.classList.contains('todo-removeBtn')) {
 		e.target.parentNode.parentNode.parentNode.remove();
+		if (list.children.length > 0) {
+			list.focus();
+		} else {
+			newBtn.focus();
+		}
 	}
 });
