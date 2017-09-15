@@ -1,45 +1,64 @@
 <html>
 <head>
 	<title>HTML, CSS, JS and A11y Workshop</title>
+	<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
 	<!--
 		# Step Two Tasks:
-		1.
+		1. Wrap app in a container with a white BG that is full
+		   width until it reaches 800px and then it's center
+		   column with grey sides
+		2. This app container (white column with gray sides)
+		   stretches the full height of the browser without any
+		   scroll issues and can handle overflow without visual
+		   defects
+		2. Tasks are now two column for desktop > 600px
+		3. Tasks flow left to right
+		   1 | 2
+		   3 | 4
+		4. Tasks cannot overlap, collide and order is preserved
+		   no matter the length of text
+		5. When "mobile size" or narrower is reach, tasks go to
+		   single column
 
-		NOTES:
+		NOTES: Start with mobile first. Plus, there are multiple ways to produce columns. The
+		key to this task is think about preserving "document
+		flow". Preserving document flow is key to creating
+		resilient UIs.
 	-->
-
-	<h1>Simple Todo App</h1>
-	<button>Create Todo</button>
-	<ul>
-		<li>
-			<label>
-				<input type="checkbox" />
-				<span class="">Learn HTML Basics</span>
-			</label>
-		</li>
-		<li>
-			<label>
-				<input type="checkbox" />
-				<span class="">Learn CSS Basics</span>
-			</label>
-		</li>
-		<li>
-			<label>
-				<input type="checkbox" />
-				<span class="">Learn JS Basics</span>
-			</label>
-		</li>
-		<li>
-			<label>
-				<input type="checkbox" />
-				<span class="">Learn A11y Basics</span>
-			</label>
-		</li>
-	</ul>
+	<main class="todo-app">
+		<h1>Simple Todo App</h1>
+		<button>Create Todo</button>
+		<ul class="todo-list">
+			<li class="todo">
+				<label>
+					<input type="checkbox" />
+					<span>Learn HTML Basics</span>
+				</label>
+			</li>
+			<li class="todo">
+				<label>
+					<input type="checkbox" />
+					<span>Learn CSS Basics</span>
+				</label>
+			</li>
+			<li class="todo">
+				<label>
+					<input type="checkbox" />
+					<span>Learn JS Basics</span>
+				</label>
+			</li>
+			<li class="todo">
+				<label>
+					<input type="checkbox" />
+					<span>Learn A11y Basics</span>
+				</label>
+			</li>
+		</ul>
+	</main>
 
 </body>
 </html>
