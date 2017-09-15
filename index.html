@@ -1,110 +1,23 @@
 <html>
 <head>
 	<title>HTML, CSS, JS and A11y Workshop</title>
-	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-	<main class="todos-main js_todos-main">
-		<h1>Simple Todo App</h1>
-		<button class="todos-newBtn js_todos-newBtn">Create Todo</button>
-		<ul class="todos-list js_todos-list" tabindex="-1" aria-label="Your list of todos.">
-			<li class="todo">
-				<div class="todo-wrapper">
-					<label class="todo-label">
-						<input type="checkbox">
-						<div class="">Learn HTML Basics</div>
-					</label>
-					<div class="todo-remove">
-						<button class="todo-removeBtn js_todo-removeBtn">
-							<span class="todo-removeIcon" aria-hidden="true"></span>
-							<span class="todo-removeText">Remove Todo</span>
-						</button>
-					</div>
-				</span>
-			</li>
-			<li class="todo">
-				<div class="todo-wrapper">
-					<label class="todo-label">
-						<input type="checkbox">
-						<div class="">Learn CSS Basics</div>
-					</label>
-					<div class="todo-remove">
-						<button class="todo-removeBtn js_todo-removeBtn">
-							<span class="todo-removeIcon" aria-hidden="true"></span>
-							<span class="todo-removeText">Remove Todo</span>
-						</button>
-					</div>
-				</span>
-			</li>
-			<li class="todo">
-				<div class="todo-wrapper">
-					<label class="todo-label">
-						<input type="checkbox">
-						<div class="">Learn JS Basics</div>
-					</label>
-					<div class="todo-remove">
-						<button class="todo-removeBtn js_todo-removeBtn">
-							<span class="todo-removeIcon" aria-hidden="true"></span>
-							<span class="todo-removeText">Remove Todo</span>
-						</button>
-					</div>
-				</span>
-			</li>
-			<li class="todo">
-				<div class="todo-wrapper">
-					<label class="todo-label">
-						<input type="checkbox">
-						<div class="">Learn A11y Basics</div>
-					</label>
-					<div class="todo-remove">
-						<button class="todo-removeBtn js_todo-removeBtn">
-							<span class="todo-removeIcon" aria-hidden="true"></span>
-							<span class="todo-removeText">Remove Todo</span>
-						</button>
-					</div>
-				</span>
-			</li>
-		</ul>
-	</main>
+	<!--
+		# Step One Tasks:
+		1. Write a header with the text "Simple Todo App"
+		2. Write a "clickable" element to add a new todo
+		3. Write markup with 4 initial todos
+		4. Each todo needs to have a done and not-done state
 
-	<div class="modal-container js_modal-container"
-		tabindex="-1" role="dialog"
-		aria-label="New Todo Form">
-		<header class="modal-header">
-			<h2 id="modal-header-text" class="modal-headerText">Create Your New Todo</h2>
-			<button class="modal-closeBtn js_modal-closeBtn">
-				<span class="modal-closeIcon" aria-hidden="true"></span>
-				<span class="modal-closeText">Close Modal</span>
-			</button>
-		</header>
-		<form class="js_modal-form" name="create-todo">
-			<label for="todo">Add Todo:</label>
-			<input id="todo" name="todo" type="text">
-			<input type="submit" value="Submit">
-		</form>
-	</div>
-
-	<div class="todo-template js_todo-template">
-		<li class="todo">
-			<div class="todo-wrapper">
-				<label class="todo-label">
-					<input type="checkbox">
-					<div class=""></div>
-				</label>
-				<div class="todo-remove">
-					<button class="todo-removeBtn js_todo-removeBtn">
-						<span class="todo-removeIcon" aria-hidden="true"></span>
-						<span class="todo-removeText">Remove Todo</span>
-					</button>
-				</div>
-			</div>
-		</li>
-	</div>
-
-	<script src="script.js"></script>
-	<script src="inert.min.js"></script>
+		NOTES: Think about semantic markup here and accessibility.
+		What elements are best suited for a main header, a clickable
+		element for triggering an action, multiple things of the same
+		type and finally what would be the best for a boolean type
+		state (done/not-done)?
+	-->
 
 </body>
 </html>
