@@ -7,33 +7,30 @@
 <body>
 
 	<!--
-		# Step Four Tasks:
-		1. Style the new modal element so it overlaps the main
-		   app element
-		2. The main app element is removed from the "document
-		   flow" so it has no affect on scrolling behavior
-		3. As the modal grows in length to accommodate any
-		   additional content, and it should have a direct
-		   affect on the scrolling behavior without issue
-		4. You have to avoid declaring any overflow properties
+		# Step Five Tasks:
+		1. Now that we have a truly interactive app, attempt to
+		   use the app with the keyboard only
+		2. Now add focus management to add keyboard controls to
+		   all functionality
+		3. Add ESC key functionality to close the modal
+		4. Add the wicg-inert polyfill to add focus trapping
+		5. Ensure form has the basics for a11y
 
-		NOTES: Your natural inclination will most likley be
-		wrong. The position properties will most likely need
-		to be flipped from what you think they should be.
-		Remember, we want to the main app to be removed from
-		the flow, and the modal should behavior like normal
-		elements!
+		NOTES: Don't forget to add tabindex to the elements that
+		don't naturally have focus capturing. There will also be
+		a case where you'll need to wait just a bit for the DOM
+		to update before trying to focus on an element.
 	-->
 
-	<main class="todo-app hasOpenModal">
+	<main class="todo-app js_todo-app">
 		<h1>Simple Todo App</h1>
-		<button>Create Todo</button>
-		<ul class="todo-list">
+		<button class="js_todo-newBtn">Create Todo</button>
+		<ul class="todo-list js_todo-list">
 			<li class="todo">
 				<div class="todo-wrapper">
 					<label>
 						<input type="checkbox" />
-						<span>Learn HTML Basics</span>
+						<span class="todo-text">Learn HTML Basics</span>
 					</label>
 					<div class="todo-remove">
 						<button class="todo-removeBtn">
@@ -47,7 +44,7 @@
 				<div class="todo-wrapper">
 					<label>
 						<input type="checkbox" />
-						<span>Learn CSS Basics</span>
+						<span class="todo-text">Learn CSS Basics</span>
 					</label>
 					<div class="todo-remove">
 						<button class="todo-removeBtn">
@@ -61,7 +58,7 @@
 				<div class="todo-wrapper">
 					<label>
 						<input type="checkbox" />
-						<span>Learn JS Basics</span>
+						<span class="todo-text">Learn JS Basics</span>
 					</label>
 					<div class="todo-remove">
 						<button class="todo-removeBtn">
@@ -75,7 +72,7 @@
 				<div class="todo-wrapper">
 					<label>
 						<input type="checkbox" />
-						<span>Learn A11y Basics</span>
+						<span class="todo-text">Learn A11y Basics</span>
 					</label>
 					<div class="todo-remove">
 						<button class="todo-removeBtn">
@@ -88,19 +85,38 @@
 		</ul>
 	</main>
 
-	<div class="modal-container isOpen">
+	<div class="modal-container js_modal-container">
 		<header class="modal-header">
 			<h2 class="modal-headerText">Create Your New Todo</h2>
-			<button class="modal-closeBtn">
+			<button class="modal-closeBtn js_modal-closeBtn">
 				<span class="modal-closeIcon"></span>
 				<span class="modal-closeText">Close Modal</span>
 			</button>
 		</header>
-		<form class="js_modal-form" name="create-todo">
+		<form class="js_modal-form js_modal-form" name="create-todo">
 			<input id="todo" name="todo" type="text" placeholder="My Todo Title">
 			<input type="submit" value="Submit">
 		</form>
 	</div>
+
+	<div class="todo-template js_todo-template">
+		<li class="todo">
+			<div class="todo-wrapper">
+				<label class="todo-label">
+					<input type="checkbox">
+					<span class="todo-text"></span>
+				</label>
+				<div class="todo-remove">
+					<button class="todo-removeBtn js_todo-removeBtn">
+						<span class="todo-removeIcon"></span>
+						<span class="todo-removeText">Remove Todo</span>
+					</button>
+				</div>
+			</div>
+		</li>
+	</div>
+
+	<script src="script.js"></script>
 
 </body>
 </html>

@@ -118,3 +118,6 @@ input[type="submit"] {
 		width: 900px;
 	}
 }
+.todo-template {
+	display: none;
+}
