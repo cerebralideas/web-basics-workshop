@@ -82,7 +82,7 @@ input[type="submit"] {
 .modal-header {
 	display: table;
 	width: 100%;
-	padding-bottom: 2rem;
+	padding-bottom: 1rem;
 }
 .modal-headerText {
 	display: table-cell;
@@ -104,6 +104,16 @@ input[type="submit"] {
 	height: 0;
 	width: 0;
 	text-indent: -9999em;
+}
+.modal-formAlert {
+	display: none;
+	color: darkred;
+}
+.modal-formAlert p {
+	margin: 0 0 1rem;
+}
+.modal-formAlert.isShown {
+	display: block;
 }
 .modal-container.isOpen {
 	display: block;

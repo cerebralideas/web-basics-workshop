@@ -17,16 +17,16 @@ let main = document.querySelector('.js_todo-app'),
 		main.removeAttribute('inert');
 		modal.classList.remove('isOpen');
 
-		if (hasNewTodo) {
-			setTimeout(function manageFocus() {
+		setTimeout(function manageFocus() {
+			if (hasNewTodo) {
 				let newTodos = list.querySelectorAll('.todo'),
 					newTodo = newTodos[newTodos.length - 1].querySelector('input');
 
 				newTodo.focus();
-			}, 35);
-		} else {
-			newBtn.focus();
-		}
+			} else {
+				newBtn.focus();
+			}
+		}, 35);
 	}
 
 newBtn.addEventListener('click', openModal);
@@ -44,10 +44,21 @@ form.addEventListener('submit', function (e) {
 	let value = e.target.elements.todo.value,
 		newTodo = todoTemplate.querySelector('.todo').cloneNode('deep');
 
-	newTodo.querySelector('.todo-text').innerText = value;
+	if (value === '') {
+		let alert = modal.querySelector('.modal-formAlert');
+		alert.classList.add('isShown');
+		alert.setAttribute('aria-live', 'assertive');
+	} else {
+		let alert = modal.querySelector('.modal-formAlert');
+		alert.classList.remove('isShown');
+		alert.removeAttribute('aria-live', 'assertive');
 
-	list.appendChild(newTodo);
-	closeModal(e, true);
+		newTodo.querySelector('.todo-text').innerText = value;
+		modal.querySelector('#todo-input').value = '';
+
+		list.appendChild(newTodo);
+		closeModal(e, true);
+	}
 });
 list.addEventListener('click', function (e) {
 	if (e.target.classList.contains('todo-removeBtn')) {

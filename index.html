@@ -8,9 +8,17 @@
 
 	<!--
 		# Step Six Tasks:
-		1.
+		1. Start up VoiceOver on your Mac (Command-F5)
+		2. Correct the verbosity of the modal using  appropriate
+		   role and ARIA attributes
+		3. Correct the verbosity on the remove and close elements
+		   that have an icon and hidden a11y text
+		3. Add a form error alert that is accessible and read aloud
+		   if the input is empty
 
-		NOTES:
+		NOTES: Make sure to use the right roles and aria attributes.
+		The secret to the alert is using ARIA's live regions and
+		the assertive value. But, use it wisely.
 	-->
 
 	<main class="todo-app js_todo-app">
@@ -26,7 +34,7 @@
 					</label>
 					<div class="todo-remove">
 						<button class="todo-removeBtn">
-							<span class="todo-removeIcon"></span>
+							<span class="todo-removeIcon" aria-hidden="true"></span>
 							<span class="todo-removeText">Remove Todo</span>
 						</button>
 					</div>
@@ -40,7 +48,7 @@
 					</label>
 					<div class="todo-remove">
 						<button class="todo-removeBtn">
-							<span class="todo-removeIcon"></span>
+							<span class="todo-removeIcon" aria-hidden="true"></span>
 							<span class="todo-removeText">Remove Todo</span>
 						</button>
 					</div>
@@ -54,7 +62,7 @@
 					</label>
 					<div class="todo-remove">
 						<button class="todo-removeBtn">
-							<span class="todo-removeIcon"></span>
+							<span class="todo-removeIcon" aria-hidden="true"></span>
 							<span class="todo-removeText">Remove Todo</span>
 						</button>
 					</div>
@@ -68,7 +76,7 @@
 					</label>
 					<div class="todo-remove">
 						<button class="todo-removeBtn">
-							<span class="todo-removeIcon"></span>
+							<span class="todo-removeIcon" aria-hidden="true"></span>
 							<span class="todo-removeText">Remove Todo</span>
 						</button>
 					</div>
@@ -78,14 +86,18 @@
 	</main>
 
 	<div class="modal-container js_modal-container"
-		tabindex="-1">
+		tabindex="-1" role="dialog"
+		aria-label="New Todo Form">
 		<header class="modal-header">
 			<h2 class="modal-headerText">Create Your New Todo</h2>
 			<button class="modal-closeBtn js_modal-closeBtn">
-				<span class="modal-closeIcon"></span>
+				<span class="modal-closeIcon" aria-hidden="true"></span>
 				<span class="modal-closeText">Close Modal</span>
 			</button>
 		</header>
+		<div role="alert" class="modal-formAlert js_modal-formAlert">
+			<p>Alert: the form input cannot be empty.</p>
+		</div>
 		<form class="js_modal-form js_modal-form" name="create-todo">
 			<label for="todo-input">Add Todo:</label>
 			<input id="todo-input" name="todo" type="text" placeholder="My Todo Title">
@@ -102,7 +114,7 @@
 				</label>
 				<div class="todo-remove">
 					<button class="todo-removeBtn js_todo-removeBtn">
-						<span class="todo-removeIcon"></span>
+						<span class="todo-removeIcon" aria-hidden="true"></span>
 						<span class="todo-removeText">Remove Todo</span>
 					</button>
 				</div>
