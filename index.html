@@ -8,15 +8,25 @@
 
 	<!--
 		# Step Five Tasks:
-		1.
+		1. Now that we have a truly interactive app, attempt to
+		   use the app with the keyboard only
+		2. Now add focus management to add keyboard controls to
+		   all functionality
+		3. Add ESC key functionality to close the modal
+		4. Add the wicg-inert polyfill to add focus trapping
+		5. Ensure form has the basics for a11y
 
-		NOTES:
+		NOTES: Don't forget to add tabindex to the elements that
+		don't naturally have focus capturing. There will also be
+		a case where you'll need to wait just a bit for the DOM
+		to update before trying to focus on an element.
 	-->
 
 	<main class="todo-app js_todo-app">
 		<h1>Simple Todo App</h1>
 		<button class="js_todo-newBtn">Create Todo</button>
-		<ul class="todo-list js_todo-list">
+		<ul class="todo-list js_todo-list"
+			tabindex="-1">
 			<li class="todo">
 				<div class="todo-wrapper">
 					<label>
@@ -76,7 +86,8 @@
 		</ul>
 	</main>
 
-	<div class="modal-container js_modal-container">
+	<div class="modal-container js_modal-container"
+		tabindex="-1">
 		<header class="modal-header">
 			<h2 class="modal-headerText">Create Your New Todo</h2>
 			<button class="modal-closeBtn js_modal-closeBtn">
@@ -85,7 +96,8 @@
 			</button>
 		</header>
 		<form class="js_modal-form js_modal-form" name="create-todo">
-			<input id="todo" name="todo" type="text" placeholder="My Todo Title">
+			<label for="todo-input">Add Todo:</label>
+			<input id="todo-input" name="todo" type="text" placeholder="My Todo Title">
 			<input type="submit" value="Submit">
 		</form>
 	</div>
@@ -99,7 +111,7 @@
 				</label>
 				<div class="todo-remove">
 					<button class="todo-removeBtn js_todo-removeBtn">
-						<span class="todo-removeIcon" aria-hidden="true"></span>
+						<span class="todo-removeIcon"></span>
 						<span class="todo-removeText">Remove Todo</span>
 					</button>
 				</div>
@@ -108,6 +120,7 @@
 	</div>
 
 	<script src="script.js"></script>
+	<script src="inert.min.js"></script>
 
 </body>
 </html>
