@@ -10,6 +10,10 @@ body {
 	margin: 0;
 	background: lightgray;
 }
+input[type="submit"] {
+	display: block;
+	margin-top: 1rem;
+}
 .todo-app {
 	max-width: 900px;
 	min-height: 100%;
@@ -58,6 +62,43 @@ body {
 	content: "\2716";
 }
 .todo-removeText {
+	position: fixed;
+	height: 0;
+	width: 0;
+	text-indent: -9999em;
+}
+.modal-container {
+	position: relative;
+	top: 6rem;
+	min-height: 40%;
+	width: 50%;
+	margin: auto;
+	padding: 1em;
+	background: white;
+	border: 1px solid grey;
+	margin-bottom: 5rem;
+}
+.modal-header {
+	display: table;
+	width: 100%;
+	padding-bottom: 2rem;
+}
+.modal-headerText {
+	display: table-cell;
+}
+.modal-closeBtn {
+	display: table-cell;
+	width: 1.25em;
+	height: 1.25em;
+	background: none;
+	border: none;
+	font-size: 1.25em;
+}
+.modal-closeIcon:before {
+	display: block;
+	content: "\2716";
+}
+.modal-closeText {
 	position: fixed;
 	height: 0;
 	width: 0;

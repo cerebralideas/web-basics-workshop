@@ -7,19 +7,25 @@
 <body>
 
 	<!--
-		# Step Three Tasks:
-		1. Style the added elements in the todos so that
-		   the `todo-remove` element only shows the "X" but
-		   preserves the "remove todo" for a11y
-		2. These new `todo-remove` elements have to be
-		   right aligned, have a fixed width of 3em and do
-		   not wrap
+		# Step Four Tasks:
+		1. Style the new modal element so it overlaps the main
+		   app element
+		2. The main app element is removed from the "document
+		   flow" so it has no affect on scrolling behavior
+		3. As the modal grows in length to accommodate any
+		   additional content, and it should have a direct
+		   affect on the scrolling behavior without issue
+		4. You have to avoid declaring any overflow properties
 
-		NOTES: Make sure there is no text collision or visual
-		defects no matter the width or length of text. Pssst,
-		use CSS tables.
+		NOTES: Your natural inclination will most likley be
+		wrong. The position properties will most likely need
+		to be flipped from what you think they should be.
+		Remember, we want to the main app to be removed from
+		the flow, and the modal should behavior like normal
+		elements!
 	-->
-	<main class="todo-app">
+
+	<main class="todo-app hasOpenModal">
 		<h1>Simple Todo App</h1>
 		<button>Create Todo</button>
 		<ul class="todo-list">
@@ -81,6 +87,20 @@
 			</li>
 		</ul>
 	</main>
+
+	<div class="modal-container isOpen">
+		<header class="modal-header">
+			<h2 class="modal-headerText">Create Your New Todo</h2>
+			<button class="modal-closeBtn">
+				<span class="modal-closeIcon"></span>
+				<span class="modal-closeText">Close Modal</span>
+			</button>
+		</header>
+		<form class="js_modal-form" name="create-todo">
+			<input id="todo" name="todo" type="text" placeholder="My Todo Title">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
 
 </body>
 </html>
