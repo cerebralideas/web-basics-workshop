@@ -7,27 +7,16 @@
 <body>
 
 	<!--
-		# Step Two Tasks:
-		1. Wrap app in a container with a white BG that is full
-		   width until it reaches 800px and then it's center
-		   column with grey sides
-		2. This app container (white column with gray sides)
-		   stretches the full height of the browser without any
-		   scroll issues and can handle overflow without visual
-		   defects
-		2. Tasks are now two column for desktop > 600px
-		3. Tasks flow left to right
-		   1 | 2
-		   3 | 4
-		4. Tasks cannot overlap, collide and order is preserved
-		   no matter the length of text
-		5. When "mobile size" or narrower is reach, tasks go to
-		   single column
+		# Step Three Tasks:
+		1. Style the added elements in the todos so that
+		   the `todo-remove` element only shows the "X" but
+		   preserves the "remove todo" for a11y
+		2. These new `todo-remove` elements have to be
+		   right aligned, have a fixed width of 3em and do
+		   not wrap
 
-		NOTES: Start with mobile first. Plus, there are multiple ways to produce columns. The
-		key to this task is think about preserving "document
-		flow". Preserving document flow is key to creating
-		resilient UIs.
+		NOTES: Make sure there is no text collision or visual
+		defects no matter the width or length of text
 	-->
 	<main class="todo-app">
 		<h1>Simple Todo App</h1>
