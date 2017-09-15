@@ -35,3 +35,7 @@ body {
 		font-size: initial;
 	}
 }
+.todo-removeIcon:before {
+	display: block;
+	content: "\2716";
+}

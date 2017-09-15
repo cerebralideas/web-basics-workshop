@@ -16,37 +16,70 @@
 		   not wrap
 
 		NOTES: Make sure there is no text collision or visual
-		defects no matter the width or length of text
+		defects no matter the width or length of text. Pssst,
+		use CSS tables.
 	-->
 	<main class="todo-app">
 		<h1>Simple Todo App</h1>
 		<button>Create Todo</button>
 		<ul class="todo-list">
-			<li class="todo">
-				<label>
-					<input type="checkbox" />
-					<span class="">Learn HTML Basics</span>
-				</label>
-			</li>
-			<li class="todo">
-				<label>
-					<input type="checkbox" />
-					<span class="">Learn CSS Basics</span>
-				</label>
-			</li>
-			<li class="todo">
-				<label>
-					<input type="checkbox" />
-					<span class="">Learn JS Basics</span>
-				</label>
-			</li>
-			<li class="todo">
-				<label>
-					<input type="checkbox" />
-					<span class="">Learn A11y Basics</span>
-				</label>
-			</li>
-		</ul>
+				<li class="todo">
+					<div class="todo-wrapper">
+						<label>
+							<input type="checkbox" />
+							<span>Learn HTML Basics</span>
+						</label>
+						<div class="todo-remove">
+							<button class="todo-removeBtn">
+								<span class="todo-removeIcon"></span>
+								<span class="todo-removeText">Remove Todo</span>
+							</button>
+						</div>
+					</div>
+				</li>
+				<li class="todo">
+					<div class="todo-wrapper">
+						<label>
+							<input type="checkbox" />
+							<span>Learn CSS Basics</span>
+						</label>
+						<div class="todo-remove">
+							<button class="todo-removeBtn">
+								<span class="todo-removeIcon"></span>
+								<span class="todo-removeText">Remove Todo</span>
+							</button>
+						</div>
+					</div>
+				</li>
+				<li class="todo">
+					<div class="todo-wrapper">
+						<label>
+							<input type="checkbox" />
+							<span>Learn JS Basics</span>
+						</label>
+						<div class="todo-remove">
+							<button class="todo-removeBtn">
+								<span class="todo-removeIcon"></span>
+								<span class="todo-removeText">Remove Todo</span>
+							</button>
+						</div>
+					</div>
+				</li>
+				<li class="todo">
+					<div class="todo-wrapper">
+						<label>
+							<input type="checkbox" />
+							<span>Learn A11y Basics</span>
+						</label>
+						<div class="todo-remove">
+							<button class="todo-removeBtn">
+								<span class="todo-removeIcon"></span>
+								<span class="todo-removeText">Remove Todo</span>
+							</button>
+						</div>
+					</div>
+				</li>
+			</ul>
 	</main>
 
 </body>
