@@ -20,6 +20,7 @@ body {
 .todo-list {
 	padding: 0;
 	margin: 1rem 0;
+	list-style: none;
 }
 .todo {
 	padding: 0.5em 0;
@@ -34,4 +35,31 @@ body {
 		width: 50%;
 		font-size: initial;
 	}
+}
+.todo-wrapper {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+.todo-label,
+.todo-remove {
+	display: table-cell;
+}
+.todo-remove {
+	width: 3em;
+}
+.todo-removeBtn {
+	background: none;
+	border: none;
+	font-size: 1em;
+}
+.todo-removeIcon:before {
+	display: block;
+	content: "\2716";
+}
+.todo-removeText {
+	position: fixed;
+	height: 0;
+	width: 0;
+	text-indent: -9999em;
 }
