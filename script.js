@@ -17,16 +17,16 @@ let main = document.querySelector('.js_todo-app'),
 		main.removeAttribute('inert');
 		modal.classList.remove('isOpen');
 
-		if (hasNewTodo) {
-			setTimeout(function manageFocus() {
+		setTimeout(function manageFocus() {
+			if (hasNewTodo) {
 				let newTodos = list.querySelectorAll('.todo'),
 					newTodo = newTodos[newTodos.length - 1].querySelector('input');
 
 				newTodo.focus();
-			}, 35);
-		} else {
-			newBtn.focus();
-		}
+			} else {
+				newBtn.focus();
+			}
+		}, 35);
 	}
 
 newBtn.addEventListener('click', openModal);
