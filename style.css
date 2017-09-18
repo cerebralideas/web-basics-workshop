@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:500,600,700,800');
+
+
+/* general styling */
 *, *:before, *:after {
 	box-sizing: border-box;
 }
@@ -8,18 +12,25 @@ body {
 body {
 	padding: 0;
 	margin: 0;
-	background: lightgray;
+	background:#E9DED7;
+	color: #425F5E;
+	font-family: 'Raleway', sans-serif;
 }
 input[type="submit"] {
 	display: block;
 	margin-top: 1rem;
 }
+
+/* todo app styling */
 .todo-app {
 	max-width: 900px;
 	min-height: 100%;
 	margin: 0 auto;
 	padding: 2em;
-	background: white;
+	background: #EBCFC3;
+}
+.title{
+	font-weight: 800;
 }
 .todo-list {
 	padding: 0;
@@ -29,6 +40,35 @@ input[type="submit"] {
 .todo {
 	padding: 0.5em 0;
 }
+ 
+.todo input{
+	font-size: 3em;
+}
+
+.js_todo-newBtn{
+	background: #93A79D;
+	border: none;
+	border-radius: 10px;
+	padding: 1em;
+	color: white;
+	font-size: .8em;
+	box-shadow: 2px 2px 2px 0px #425F5E;
+}
+
+.js_todo-newBtn:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.activeButton{
+	background: #425F5E;
+	border: none;
+	border-radius: 10px;
+	padding: 1em;
+	color: white;
+	font-size: .8em;
+}
+
 @media (min-width: 600px) {
 	.todo-list {
 		font-size: 0;
@@ -57,16 +97,26 @@ input[type="submit"] {
 	border: none;
 	font-size: 1em;
 }
+
+.todo-removeBtn:hover {
+	cursor: pointer;
+}
+
 .todo-removeIcon:before {
 	display: block;
 	content: "\2716";
+	color: #425F5E;
 }
+
+
 .todo-removeText {
 	position: fixed;
 	height: 0;
 	width: 0;
 	text-indent: -9999em;
 }
+
+/* modal styling */
 .modal-container {
 	display: none;
 	position: relative;
@@ -76,7 +126,7 @@ input[type="submit"] {
 	margin: auto;
 	padding: 1em;
 	background: white;
-	border: 1px solid grey;
+	box-shadow: 2px 2px 2px 4px grey;
 	margin-bottom: 5rem;
 }
 .modal-header {
@@ -98,13 +148,14 @@ input[type="submit"] {
 .modal-closeIcon:before {
 	display: block;
 	content: "\2716";
+	color: #425F5E;
 }
-.modal-closeText {
+/* .modal-closeText {
 	position: fixed;
 	height: 0;
 	width: 0;
 	text-indent: -9999em;
-}
+} */
 .modal-formAlert {
 	display: none;
 	color: darkred;

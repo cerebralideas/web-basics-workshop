@@ -29,7 +29,13 @@ let main = document.querySelector('.js_todo-app'),
 		}, 35);
 	}
 
+	// toggles color of the button briefly to indicate that it was clicked
+	function clickButton(){
+		newBtn.classList.toggle("activeButton");
+	}
+
 newBtn.addEventListener('click', openModal);
+newBtn.addEventListener('mousedown', clickButton)
 closeBtn.addEventListener('click', closeModal);
 document.addEventListener('keyup', function (e) {
 	if (event.keyCode === 27 && // Is key Esc key?
