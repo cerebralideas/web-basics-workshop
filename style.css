@@ -18,7 +18,7 @@ body {
 }
 input[type="submit"] {
 	display: block;
-	margin-top: 1rem;
+	margin-top: 2rem;
 }
 
 /* todo app styling */
@@ -31,6 +31,7 @@ input[type="submit"] {
 }
 .title{
 	font-weight: 800;
+	text-align: center;
 }
 .todo-list {
 	padding: 0;
@@ -45,7 +46,7 @@ input[type="submit"] {
 	font-size: 3em;
 }
 
-.js_todo-newBtn{
+.todo_btn{
 	background: #93A79D;
 	border: none;
 	border-radius: 10px;
@@ -55,12 +56,12 @@ input[type="submit"] {
 	box-shadow: 2px 2px 2px 0px #425F5E;
 }
 
-.js_todo-newBtn:hover{
+.todo_btn:hover{
 	cursor: pointer;
 	text-decoration: underline;
 }
 
-.activeButton{
+.activeBtn{
 	background: #425F5E;
 	border: none;
 	border-radius: 10px;
@@ -124,7 +125,7 @@ input[type="submit"] {
 	min-height: 40%;
 	width: 50%;
 	margin: auto;
-	padding: 1em;
+	padding: 1.5em;
 	background: white;
 	box-shadow: 2px 2px 2px 4px grey;
 	margin-bottom: 5rem;
@@ -134,8 +135,11 @@ input[type="submit"] {
 	width: 100%;
 	padding-bottom: 1rem;
 }
+
 .modal-headerText {
 	display: table-cell;
+	text-align: center;
+	padding-bottom: 1em;
 }
 .modal-closeBtn {
 	display: table-cell;
@@ -150,12 +154,17 @@ input[type="submit"] {
 	content: "\2716";
 	color: #425F5E;
 }
-/* .modal-closeText {
+.modal-closeText {
 	position: fixed;
 	height: 0;
 	width: 0;
 	text-indent: -9999em;
-} */
+}
+
+.js_modal-form{
+	margin-left: 3em;
+}
+
 .modal-formAlert {
 	display: none;
 	color: darkred;
@@ -174,11 +183,19 @@ input[type="submit"] {
 }
 @media (min-width: 900px) {
 	.todo-app.hasOpenModal {
-		left: 50%;
-		margin-left: -450px;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
 		width: 900px;
 	}
 }
 .todo-template {
 	display: none;
 }
+
+#todo-input{
+	margin-left: 1em;
+	border: 1px solid black;
+	padding: 5px;
+}
+
