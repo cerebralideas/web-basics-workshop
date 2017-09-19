@@ -21,6 +21,10 @@ input[type="submit"] {
 	margin-top: 2rem;
 }
 
+input[type="checkbox"]{
+	box-shadow: 2px 2px 2px grey;
+}
+
 /* todo app styling */
 .todo-app {
 	max-width: 900px;
@@ -28,6 +32,8 @@ input[type="submit"] {
 	margin: 0 auto;
 	padding: 2em;
 	background: #EBCFC3;
+	border: 2px dashed #b7805d;
+
 }
 .title{
 	font-weight: 800;
