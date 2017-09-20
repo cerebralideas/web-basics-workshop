@@ -18,10 +18,11 @@
 	-->
 
 	<main class="todo-app js_todo-app">
-		<h1>Simple Todo App</h1>
-		<button class="js_todo-newBtn">Create Todo</button>
+		<h1 class="title">Simple Todo App</h1>
+		<button class="js_todo-newBtn todo_btn" onclick="clickButton()">Create Todo</button>
 		<ul class="todo-list js_todo-list"
-			tabindex="-1">
+			tabindex="-1"
+			aria-label="List of Todos">
 			<li class="todo">
 				<div class="todo-wrapper">
 					<label>
@@ -95,9 +96,11 @@
 			<p>Alert: the form input cannot be empty.</p>
 		</div>
 		<form class="js_modal-form js_modal-form" name="create-todo">
-			<label for="todo-input">Add Todo:</label>
-			<input id="todo-input" name="todo" type="text" placeholder="My Todo Title">
-			<input type="submit" value="Submit">
+			<label for="todo-input">
+				Add Todo:
+				<input id="todo-input" name="todo" type="text" placeholder="My Todo Title">
+			</label>
+			<input type="submit" value="Submit" class="todo_btn submit_btn">
 		</form>
 	</div>
 

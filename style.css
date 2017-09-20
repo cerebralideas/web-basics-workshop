@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:500,600,700,800');
+
+
+/* general styling */
 *, *:before, *:after {
 	box-sizing: border-box;
 }
@@ -8,18 +12,32 @@ body {
 body {
 	padding: 0;
 	margin: 0;
-	background: lightgray;
+	background:#E9DED7;
+	color: #425F5E;
+	font-family: 'Raleway', sans-serif;
 }
 input[type="submit"] {
 	display: block;
-	margin-top: 1rem;
+	margin-top: 2rem;
 }
+
+input[type="checkbox"]{
+	box-shadow: 2px 2px 2px grey;
+}
+
+/* todo app styling */
 .todo-app {
 	max-width: 900px;
 	min-height: 100%;
 	margin: 0 auto;
 	padding: 2em;
-	background: white;
+	background: #EBCFC3;
+	border: 2px dashed #b7805d;
+
+} 
+.title{
+	font-weight: 800;
+	text-align: center;
 }
 .todo-list {
 	padding: 0;
@@ -29,6 +47,36 @@ input[type="submit"] {
 .todo {
 	padding: 0.5em 0;
 }
+ 
+.todo input{
+	font-size: 3em;
+}
+
+.todo_btn{
+	background: #93A79D;
+	border: none;
+	border-radius: 10px;
+	padding: 1em;
+	color: white;
+	font-size: .8em;
+	box-shadow: 2px 2px 2px 0px #425F5E;
+}
+
+.todo_btn:hover{
+	cursor: pointer;
+	text-decoration: underline;
+	box-shadow: none;
+}
+
+.activeBtn{
+	background: #425F5E;
+	border: none;
+	border-radius: 10px;
+	padding: 1em;
+	color: white;
+	font-size: .8em;
+}
+
 @media (min-width: 600px) {
 	.todo-list {
 		font-size: 0;
@@ -57,16 +105,26 @@ input[type="submit"] {
 	border: none;
 	font-size: 1em;
 }
+
+.todo-removeBtn:hover {
+	cursor: pointer;
+}
+
 .todo-removeIcon:before {
 	display: block;
 	content: "\2716";
+	color: #425F5E;
 }
+
+
 .todo-removeText {
 	position: fixed;
 	height: 0;
 	width: 0;
 	text-indent: -9999em;
 }
+
+/* modal styling */
 .modal-container {
 	display: none;
 	position: relative;
@@ -74,9 +132,9 @@ input[type="submit"] {
 	min-height: 40%;
 	width: 50%;
 	margin: auto;
-	padding: 1em;
+	padding: 1.5em;
 	background: white;
-	border: 1px solid grey;
+	box-shadow: 2px 2px 2px 4px grey;
 	margin-bottom: 5rem;
 }
 .modal-header {
@@ -84,8 +142,11 @@ input[type="submit"] {
 	width: 100%;
 	padding-bottom: 1rem;
 }
+
 .modal-headerText {
 	display: table-cell;
+	text-align: center;
+	padding-bottom: 1em;
 }
 .modal-closeBtn {
 	display: table-cell;
@@ -95,9 +156,15 @@ input[type="submit"] {
 	border: none;
 	font-size: 1.25em;
 }
+
+.modal-closeBtn{
+	cursor: pointer;
+}
+
 .modal-closeIcon:before {
 	display: block;
 	content: "\2716";
+	color: #425F5E;
 }
 .modal-closeText {
 	position: fixed;
@@ -105,6 +172,11 @@ input[type="submit"] {
 	width: 0;
 	text-indent: -9999em;
 }
+
+.js_modal-form{
+	margin-left: 3em;
+}
+
 .modal-formAlert {
 	display: none;
 	color: darkred;
@@ -123,11 +195,19 @@ input[type="submit"] {
 }
 @media (min-width: 900px) {
 	.todo-app.hasOpenModal {
-		left: 50%;
-		margin-left: -450px;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
 		width: 900px;
 	}
 }
 .todo-template {
 	display: none;
 }
+
+#todo-input{
+	margin-left: 1em;
+	border: 1px solid black;
+	padding: 5px;
+}
+

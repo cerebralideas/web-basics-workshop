@@ -1,5 +1,6 @@
 let main = document.querySelector('.js_todo-app'),
 	newBtn = main.querySelector('.js_todo-newBtn'),
+	todoBtn = main.querySelector('.todo_btn'),
 	list = main.querySelector('.js_todo-list'),
 	modal = document.querySelector('.js_modal-container'),
 	closeBtn = modal.querySelector('.js_modal-closeBtn'),
@@ -29,7 +30,13 @@ let main = document.querySelector('.js_todo-app'),
 		}, 35);
 	}
 
+	// toggles color of the button briefly to indicate that it was clicked
+	function clickButton(){
+		todoBtn.classList.toggle("activeBtn");
+	}
+
 newBtn.addEventListener('click', openModal);
+todoBtn.addEventListener('mousedown', clickButton)
 closeBtn.addEventListener('click', closeModal);
 document.addEventListener('keyup', function (e) {
 	if (event.keyCode === 27 && // Is key Esc key?
