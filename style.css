@@ -65,6 +65,7 @@ input[type="checkbox"]{
 .todo_btn:hover{
 	cursor: pointer;
 	text-decoration: underline;
+	box-shadow: none;
 }
 
 .activeBtn{
